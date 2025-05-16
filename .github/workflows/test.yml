@@ -1,0 +1,14 @@
+name: Tests
+on: [push]
+
+jobs:
+  tests:
+    runs-on: ubuntu-24.04-arm
+    container: jhale/pytest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run tests
+        run: py.test -v
